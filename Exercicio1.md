@@ -1,9 +1,8 @@
 ```
 function solution(a) {
-    let N = a.length
-    console.log("Valor = ", N)
+    let N = a.length // precisei pegar o tamanho do vetor por não ter sido passado na função base, que só aceita o vetor
     
-    //optei pela ordenação pra realizar um menor numero de comparações, o que seria bom para um vetor de tamanho considerável
+    //optei pela ordenação pra realizar um menor numero de comparações, o que seria bom para um vetor de tamanho considerável, diminuindo o tempo de execução
     //criei um novo array para não manipular o array anteriormente informado, visto que foi passado por referencia
 
     let ArrayEntradaOrdenado = a.toSorted((a, b) => a - b);
