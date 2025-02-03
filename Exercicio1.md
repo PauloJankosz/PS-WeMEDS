@@ -1,10 +1,11 @@
+```
 function solution(a) {
     let N = a.length
     console.log("Valor = ", N)
     
-    // optei pela ordenação pra realizar um menor numero de comparações
-    // criei um novo array para não manipular o array anteriormente informado, visto que foi
-    // passado por referencia
+    //optei pela ordenação pra realizar um menor numero de comparações, o que seria bom para um vetor de tamanho considerável
+    //criei um novo array para não manipular o array anteriormente informado, visto que foi passado por referencia
+
     let ArrayEntradaOrdenado = a.toSorted((a, b) => a - b);
 
     for (let i = 0; i < N; i++) 
@@ -13,7 +14,7 @@ function solution(a) {
         {
             i++; // como o valor par é obrigatoriamente igual, eu não preciso compara-lo
         } 
-        else // condição de ser diferente ou ser o ultimo elemento do vetor
+        else // condição de ser diferente ou ser o ultimo elemento do vetor, que gera a soluçao
         {
             return ArrayEntradaOrdenado[i];
         }
@@ -30,3 +31,4 @@ for (let i = 0; i < N; i++)
 }
 // chamada da função
 solution(ArrayEntrada);
+```
