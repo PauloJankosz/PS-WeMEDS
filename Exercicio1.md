@@ -1,5 +1,6 @@
 ```
-function solution(a) {
+function solution(a)
+{
     let N = a.length // precisei pegar o tamanho do vetor por não ter sido passado na função base, que só aceita o vetor
     
     //optei pela ordenação pra realizar um menor numero de comparações, o que seria bom para um vetor de tamanho considerável, diminuindo o tempo de execução
