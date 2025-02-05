@@ -4,6 +4,10 @@ h1 {
   font-weight: 700;
 }
 
+span {
+  font-family: "Poppins";
+}
+
 .container {
   display: flex;
   flex-direction: column;
@@ -12,7 +16,7 @@ h1 {
   padding: 2rem;
 }
 
-.retangulo {
+.box {
   width: 60rem;
   height: 12rem;
   background-color: "#FFFFFF";
@@ -23,6 +27,29 @@ h1 {
   justify-content: center;
   flex-direction: column;
   margin-top: 3rem;
+}
+
+.task-list-box {
+  width: 60rem;
+  height: 40rem;
+  background-color: #ffffff;
+  border-radius: 2rem;
+  box-shadow: 0px 10px 60px 0px #e2ecf980;
+  display: flex;
+  flex-direction: column;
+  margin-top: 3rem;
+  margin-bottom: 2rem;
+}
+
+.task-list-box h1 {
+  font-size: 2rem;
+}
+
+.task-title {
+  display: flex;
+  align-items: start;
+  margin-top: 3rem;
+  margin-left: 2.5rem;
 }
 
 .todo-input {
@@ -49,15 +76,100 @@ h1 {
 }
 
 .todo-button-text {
-  font-family: Poppins;
+  font-family: "Poppins";
+  font-size: 1rem;
   color: #ffffff;
 }
 
+.task-options {
+  display: grid;
+  grid-template-columns: 1fr 1fr 5fr;
+  gap: 1rem;
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-size: 1.5rem;
+  margin: 1rem 3rem 0 3rem;
+  color: #ffffff;
+  text-align: center;
+}
+
+.task-options span {
+  padding: 5px 10px;
+  border-radius: 5px;
+  margin-top: 1rem;
+  background-color: #65558f;
+}
+
+.task-line {
+  width: 100%;
+  height: 1px;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  background-color: #eeeeee;
+}
+
+.task-items-box {
+  display: grid;
+  grid-template-columns: 1fr 1fr 3fr;
+  margin: 2rem 13rem 0 3rem;
+}
+
+.task-items-status-content {
+  font-family: "Inter";
+  font-size: 1.5rem;
+  font-weight: 400;
+  margin-bottom: 1rem;
+  margin-top: 0.5rem;
+}
+
+.task-delete-icon {
+  width: 3.5rem;
+  height: 3.5rem;
+  background-color: #ffd1d1;
+  color: red;
+  margin-bottom: 1rem;
+  margin-left: 1rem;
+  border-radius: 0.5rem;
+  border: none;
+}
+
+.task-status-button {
+  width: 6rem;
+  height: 3.5rem;
+  border-radius: 0.4rem;
+  margin-left: 0.2rem;
+  border: 2px solid transparent;
+}
+
+.task-status-button.pendente {
+  background-color: #f3d86a;
+  border-color: #9c7e06;
+}
+
+.task-status-button.concluida {
+  background-color: #16c09861;
+  border-color: #008767;
+}
+
+.task-status-text.concluida {
+  color: #008767;
+}
+
+.task-status-text.pendente {
+  color: #9c7e06;
+}
+
+
+
 @media (max-width: 958px) {
-  .retangulo {
+  .box {
     width: 80%;
   }
   .todo-input {
+    width: 80%;
+  }
+
+  .task-list-box {
     width: 80%;
   }
 
