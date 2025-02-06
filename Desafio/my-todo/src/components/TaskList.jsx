@@ -17,7 +17,12 @@ const TaskList = ({ tasks, setTasks }) => {
   };
 
   const deleteTask = (index) => {
-    setTasks(tasks.filter((_, i) => i !== index));
+    const confirmDelete = window.confirm(
+      "Tem certeza que deseja excluir a tarefa selecionada?"
+    );
+    if (confirmDelete) {
+      setTasks(tasks.filter((_, i) => i !== index));
+    }
   };
 
   return (

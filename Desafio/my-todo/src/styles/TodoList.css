@@ -8,6 +8,10 @@ span {
   font-family: "Poppins";
 }
 
+button {
+  cursor: pointer;
+}
+
 .container {
   display: flex;
   flex-direction: column;
@@ -39,6 +43,7 @@ span {
   flex-direction: column;
   margin-top: 3rem;
   margin-bottom: 2rem;
+  overflow: auto;
 }
 
 .task-list-box h1 {
@@ -73,6 +78,15 @@ span {
   height: 2.5rem;
   width: 8rem;
   border: 2px solid transparent;
+  margin-bottom: 0.5rem;
+}
+
+.todo-button-help {
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  width: 5rem;
+  border: 2px solid transparent;
 }
 
 .todo-button-text {
@@ -85,7 +99,6 @@ span {
   display: grid;
   grid-template-columns: 1fr 1fr 5fr;
   gap: 1rem;
-  font-family: "Poppins", sans-serif;
   font-weight: 500;
   font-size: 1.5rem;
   margin: 1rem 3rem 0 3rem;
@@ -125,6 +138,7 @@ span {
 .task-delete-icon {
   width: 3.5rem;
   height: 3.5rem;
+
   background-color: #ffd1d1;
   color: red;
   margin-bottom: 1rem;
@@ -158,8 +172,6 @@ span {
 .task-status-text.pendente {
   color: #9c7e06;
 }
-
-
 
 @media (max-width: 958px) {
   .box {
