@@ -61,7 +61,7 @@ const TodoList = () => {
             Caso a tarefa tenha sido concluída, e não seja mais necessária,
             utilize a ação de excluir.
           </p>
-          <button onClick={toggleHelp} class="todo-close-help-card">
+          <button onClick={toggleHelp} className="todo-close-help-card">
             Fechar
           </button>
         </div>

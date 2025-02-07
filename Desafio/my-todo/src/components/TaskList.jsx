@@ -42,7 +42,7 @@ const TaskList = ({ tasks, setTasks }) => {
 
   return (
     <div className="task-list-box">
-      <div className="title-container">
+      <div className="task-title-container">
         <h1 className="task-title">Tarefas atuais selecionadas</h1>
         <button onClick={toggleFilter} className="task-filter-button">
           <span className="task-filter-text">
@@ -58,7 +58,7 @@ const TaskList = ({ tasks, setTasks }) => {
       <div className="task-options">
         <span>Status</span>
         <span>Ação</span>
-        <span className="descrição">Descrição</span>
+        <span>Descrição</span>
         <div className="task-items-line" />
       </div>
       {filteredTasks.length > 0 &&

@@ -14,6 +14,11 @@ button {
   font-family: "Poppins";
 }
 
+html {
+  scrollbar-color: #65558f #f1f1f1;
+  scrollbar-width: thin;
+}
+
 p {
   margin-top: 1.5rem;
   font-family: "Poppins";
@@ -54,6 +59,7 @@ p {
   font-size: 1rem;
   color: #777777;
   margin-bottom: 1rem;
+  margin-top: 2rem;
 }
 
 .todo-button {
@@ -72,6 +78,14 @@ p {
   color: #ffffff;
 }
 
+.todo-button-help {
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  width: 5rem;
+  border: 2px solid transparent;
+}
+
 .todo-help-card {
   max-width: 25rem;
   display: flex;
@@ -80,20 +94,14 @@ p {
   height: 28rem;
   background-color: "#FFFFFF";
   border-radius: 2rem;
+  margin-top: 1rem;
   box-shadow: 0px 10px 60px 0px #e2ecf980;
   padding: 2rem;
+  overflow-y: auto;
 }
 
 .todo-help-card > *:not(p) {
   align-self: center;
-}
-
-.todo-button-help {
-  background-color: transparent;
-  display: flex;
-  align-items: center;
-  width: 5rem;
-  border: 2px solid transparent;
 }
 
 .todo-close-help-card {
@@ -130,6 +138,13 @@ p {
   font-size: 2rem;
 }
 
+.task-title-container {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  justify-content: center;
+  align-items: center;
+}
+
 .task-title {
   display: flex;
   align-items: start;
@@ -137,11 +152,29 @@ p {
   margin-left: 2.5rem;
 }
 
+.task-filter-button {
+  width: 92%;
+  height: 3rem;
+  margin-top: 3rem;
+  border-radius: 0.4rem;
+  border: 2px solid transparent;
+  background-color: #65558f;
+}
+
 .task-filter-text {
   font-family: "Poppins";
   font-weight: 500;
   font-size: 1.5rem;
   color: #ffffff;
+}
+
+.task-line {
+  width: 1000%;
+  height: 1px;
+  margin-top: 2rem;
+  margin-right: 5rem;
+  margin-bottom: 1rem;
+  background-color: #eeeeee;
 }
 
 .task-options {
@@ -162,13 +195,10 @@ p {
   background-color: #65558f;
 }
 
-.task-line {
-  width: 1000%;
+.task-items-line {
   height: 1px;
-  margin-top: 2rem;
-  margin-right: 5rem;
-  margin-bottom: 1rem;
-  background-color: #eeeeee;
+  background-color: #cebaba;
+  grid-column: span 3;
 }
 
 .task-items-box {
@@ -177,34 +207,6 @@ p {
   grid-template-rows: auto auto;
   margin: 1.5rem 0 0 3rem;
   width: 85%;
-}
-
-.task-items-line {
-  height: 1px;
-  background-color: #cebaba;
-  grid-column: span 3;
-}
-
-.task-items-status-content {
-  font-family: "Inter";
-  font-size: 1.5rem;
-  font-weight: 400;
-  margin-bottom: 1rem;
-  margin-top: 0.5rem;
-}
-
-.task-delete-icon {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 3.5rem;
-  height: 3.5rem;
-  background-color: #ffd1d1;
-  color: red;
-  margin-bottom: 1rem;
-  margin-left: 1rem;
-  border-radius: 0.5rem;
-  border: none;
 }
 
 .task-status-button {
@@ -220,30 +222,6 @@ p {
   border-color: #9c7e06;
 }
 
-.task-filter-button {
-  width: 92%;
-  height: 3rem;
-  margin-top: 3rem;
-  border-radius: 0.4rem;
-  border: 2px solid transparent;
-  background-color: #65558f;
-}
-
-.task-items-status-block {
-  word-wrap: break-word;
-  white-space: normal;
-  min-width: 0;
-  margin-bottom: 1rem;
-  text-align: center;
-}
-
-.title-container {
-  display: grid;
-  grid-template-columns: 1fr 2fr;
-  justify-content: center;
-  align-items: center;
-}
-
 .task-status-button.concluida {
   background-color: #16c09861;
   border-color: #008767;
@@ -255,6 +233,36 @@ p {
 
 .task-status-text.pendente {
   color: #9c7e06;
+}
+
+.task-delete-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 3.5rem;
+  height: 3.5rem;
+  background-color: #ffd1d1;
+  color: red;
+  margin: 0 1rem 1rem 1rem;
+  border-radius: 0.5rem;
+  border: none;
+}
+
+.task-items-status-block {
+  word-wrap: break-word;
+  white-space: normal;
+  min-width: 0;
+  margin-bottom: 1rem;
+  margin-top: 0.5rem;
+  text-align: center;
+}
+
+.task-items-status-content {
+  font-family: "Inter";
+  font-size: 1.5rem;
+  font-weight: 400;
+  margin-bottom: 1rem;
+  margin-top: 0.5rem;
 }
 
 @media (max-width: 958px) {
@@ -275,12 +283,12 @@ p {
 }
 
 @media (max-width: 587px) {
-  .title-container {
+  .task-title-container {
     display: flex;
     flex-direction: column;
   }
 
-  .title-container h1 {
+  .task-title-container h1 {
     font-size: 1.4rem;
   }
 
