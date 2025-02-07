@@ -1,19 +1,19 @@
 ```
 function solution(n, m)
 {
-    let comer = true
-    let x = 0
-    let count = 0
+    let comer = true;
+    let x = 0;
+    let count = 0;
     while (comer === true)
     {
-        x = (x + m) % n
-        count++
+        x = (x + m) % n;
+        count++;
         if (x === 0)
         {
-            comer = false
-            return count
+            comer = false;
         }
     }
+    return count;
 }
 
 
