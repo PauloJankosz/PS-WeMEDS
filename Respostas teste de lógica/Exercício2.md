@@ -1,19 +1,19 @@
 ```
 function solution(a)
 {
-    let vetorAux = []
-    let N = a.length
-    let count = 0
+    let vetorAux = [];
+    let N = a.length;
+    let count = 0;
     
     for (let i = 0; i < N; i++)
     {
         if (!vetorAux.includes(a[i]))
         {
-            vetorAux.push(a[i])
-            count++
+            vetorAux.push(a[i]);
+            count++;
         }
     }
-    return count
+    return count;
 }
 
 
