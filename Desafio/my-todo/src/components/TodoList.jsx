@@ -44,8 +44,23 @@ const TodoList = () => {
         </button>
       </div>
       {showHelp && (
-        <div className="help-card">
-          <button onClick={toggleHelp}>Fechar</button>
+        <div className="todo-help-card">
+          <p>
+            A criação de tarefa tem o limite de 90 caractéres, e irá criar uma
+            tarefa pendente
+          </p>
+          <p>
+            Dentro do bloco de tarefas, existe o filtro de tarefas selecionadas,
+            exibindo todas as tarefas, as pendentes e as concluídas
+          </p>
+          <p>Ao concluir uma tarefa, mude seu status</p>
+          <p>
+            Caso a tarefa tenha sido concluída, e não seja mais necessária,
+            utilize a ação de excluir
+          </p>
+          <button onClick={toggleHelp} class="close-help-card">
+            Fechar
+          </button>
         </div>
       )}
       <TaskList tasks={tasks} setTasks={setTasks} />
