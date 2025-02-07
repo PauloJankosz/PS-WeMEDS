@@ -25,13 +25,13 @@ const TodoList = () => {
   };
 
   return (
-    <div className="container">
+    <div className="todo-container">
       <h1>Minha lista de tarefas</h1>
-      <div className="box">
+      <div className="todo-box">
         <input
           className="todo-input"
           value={value}
-          maxLength={90}
+          maxLength={70}
           onFocus={() => value === "Criar uma nova tarefa" && setValue("")}
           onChange={(element) => setValue(element.target.value)}
         />
@@ -58,7 +58,7 @@ const TodoList = () => {
             Caso a tarefa tenha sido concluída, e não seja mais necessária,
             utilize a ação de excluir
           </p>
-          <button onClick={toggleHelp} class="close-help-card">
+          <button onClick={toggleHelp} class="todo-close-help-card">
             Fechar
           </button>
         </div>
