@@ -4,7 +4,8 @@ import { mdiTrashCanOutline } from "@mdi/js";
 import { useState } from "react";
 
 const TaskList = ({ tasks, setTasks }) => {
-  const [filter, setFilter] = useState("todos");
+  const [filter, setFilter] = useState("all");
+
   const toggleStatus = (index) => {
     setTasks(
       tasks.map((task, i) =>
@@ -29,14 +30,14 @@ const TaskList = ({ tasks, setTasks }) => {
 
   const toggleFilter = () => {
     setFilter((prevFilter) => {
-      if (prevFilter === "todos") return "pendente";
+      if (prevFilter === "all") return "pendente";
       if (prevFilter === "pendente") return "concluída";
-      return "todos";
+      return "all";
     });
   };
 
   const filteredTasks = tasks.filter((task) =>
-    filter === "todos" ? true : task.status === filter
+    filter === "all" ? true : task.status === filter
   );
 
   return (
@@ -45,21 +46,21 @@ const TaskList = ({ tasks, setTasks }) => {
         <h1 className="task-title">Tarefas atuais selecionadas</h1>
         <button onClick={toggleFilter} className="task-filter-button">
           <span className="task-filter-text">
-            {filter === "todos"
+            {filter === "all"
               ? "Todas"
               : filter === "pendente"
               ? "Pendentes"
               : "Concluídas"}
           </span>
         </button>
+        <div className="task-line" />
       </div>
-      <div className="task-line" />
       <div className="task-options">
         <span>Status</span>
         <span>Ação</span>
         <span className="descrição">Descrição</span>
+        <div className="task-items-line" />
       </div>
-      <div className="task-line" />
       {filteredTasks.length > 0 &&
         filteredTasks.map((task, index) => (
           <div key={index} className="task-items-box">
@@ -86,7 +87,7 @@ const TaskList = ({ tasks, setTasks }) => {
             <div className="task-items-status-block">
               <span className="task-items-status-content">{task.text}</span>
             </div>
-            <div className="task-line" />
+            <div className="task-items-line" />
           </div>
         ))}
     </div>

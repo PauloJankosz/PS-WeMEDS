@@ -163,9 +163,10 @@ p {
 }
 
 .task-line {
-  width: 100%;
+  width: 1000%;
   height: 1px;
   margin-top: 2rem;
+  margin-right: 5rem;
   margin-bottom: 1rem;
   background-color: #eeeeee;
 }
@@ -173,7 +174,15 @@ p {
 .task-items-box {
   display: grid;
   grid-template-columns: 1fr 1fr 3fr;
-  margin: 2rem 13rem 0 3rem;
+  grid-template-rows: auto auto;
+  margin: 1.5rem 0 0 3rem;
+  width: 85%;
+}
+
+.task-items-line {
+  height: 1px;
+  background-color: #cebaba;
+  grid-column: span 3;
 }
 
 .task-items-status-content {
@@ -221,10 +230,11 @@ p {
 }
 
 .task-items-status-block {
-  max-width: 80%;
-  max-height: 20rem;
   word-wrap: break-word;
   white-space: normal;
+  min-width: 0;
+  margin-bottom: 1rem;
+  text-align: center;
 }
 
 .title-container {
@@ -291,7 +301,7 @@ p {
 
   .task-status-button {
     width: 95%;
-    margin: 2rem 0 4rem 0rem;
+    margin: 2rem 0 3rem 2.3rem;
     padding: 0.2rem;
   }
 
@@ -305,8 +315,14 @@ p {
   }
 
   .task-items-status-block {
-    max-width: 90%;
+    max-width: 95%;
     word-wrap: break-word;
     white-space: normal;
+  }
+
+  .task-items-line {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    width: 150%;
   }
 }

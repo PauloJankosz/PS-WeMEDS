@@ -15,11 +15,13 @@ const TodoList = () => {
         text: value,
         status: "pendente",
       };
+      // adiciona a nova tarefa  ao array de tarefas
       setTasks([...tasks, newTask]);
       setValue("Criar uma nova tarefa");
     }
   };
 
+  // alternancia entre exibir e fechar o card de ajuda
   const toggleHelp = () => {
     setShowHelp(!showHelp);
   };
@@ -43,26 +45,28 @@ const TodoList = () => {
           <Icon path={mdiHelpBoxOutline} size={1} />
         </button>
       </div>
+      {/* Botão de ajuda, que exibe um card */}
       {showHelp && (
         <div className="todo-help-card">
           <p>
-            A criação de tarefa tem o limite de 90 caractéres, e irá criar uma
-            tarefa pendente
+            A criação de tarefa tem o limite de 70 caractéres, e irá criar uma
+            tarefa pendente.
           </p>
           <p>
             Dentro do bloco de tarefas, existe o filtro de tarefas selecionadas,
-            exibindo todas as tarefas, as pendentes e as concluídas
+            exibindo todas as tarefas, as pendentes e as concluídas.
           </p>
-          <p>Ao concluir uma tarefa, mude seu status</p>
+          <p>Ao concluir uma tarefa, mude seu status.</p>
           <p>
             Caso a tarefa tenha sido concluída, e não seja mais necessária,
-            utilize a ação de excluir
+            utilize a ação de excluir.
           </p>
           <button onClick={toggleHelp} class="todo-close-help-card">
             Fechar
           </button>
         </div>
       )}
+      {/* Componente de renderização e edição da task criada */}
       <TaskList tasks={tasks} setTasks={setTasks} />
     </div>
   );
