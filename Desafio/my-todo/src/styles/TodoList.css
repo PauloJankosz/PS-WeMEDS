@@ -290,6 +290,8 @@ p {
 
   .task-title-container h1 {
     font-size: 1.4rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
   }
 
   .task-options {
@@ -297,7 +299,7 @@ p {
     flex-direction: column;
     width: 95%;
     padding: 0.2rem;
-    margin-left: 0.3rem;
+    margin-left: 0.6rem;
   }
 
   .task-items-box {
@@ -309,12 +311,13 @@ p {
 
   .task-status-button {
     width: 95%;
-    margin: 2rem 0 3rem 2.3rem;
+    margin: 2rem 0 3rem 3.2rem;
     padding: 0.2rem;
   }
 
   .task-delete-icon {
     margin-bottom: 2rem;
+    margin-left: 3rem;
   }
 
   .task-items-status-content {
@@ -326,6 +329,7 @@ p {
     max-width: 95%;
     word-wrap: break-word;
     white-space: normal;
+    margin-left: 2.5rem;
   }
 
   .task-items-line {

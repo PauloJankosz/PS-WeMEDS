@@ -8,14 +8,16 @@ const TaskList = ({ tasks, setTasks }) => {
 
   const toggleStatus = (index) => {
     setTasks(
-      tasks.map((task, i) =>
-        i === index
-          ? {
-              ...task,
-              status: task.status === "pendente" ? "concluída" : "pendente",
-            }
-          : task
-      )
+      tasks.map((task, i) => {
+        if (i === index) {
+          return {
+            ...task,
+            status: task.status === "pendente" ? "concluída" : "pendente",
+          };
+        } else {
+          return task;
+        }
+      })
     );
   };
 
@@ -24,10 +26,12 @@ const TaskList = ({ tasks, setTasks }) => {
       "Tem certeza que deseja excluir a tarefa selecionada?"
     );
     if (confirmDelete) {
-      setTasks(tasks.filter((_, i) => i !== index));
+      //não uso o task dentro da função filter, porém preciso passar 2 paramêtros na função
+      setTasks(tasks.filter((task, i) => i !== index));
     }
   };
 
+  // função para filtrar o status que o usuário quer que seja exibido, retorno ao encontrar a string selecionada
   const toggleFilter = () => {
     setFilter((prevFilter) => {
       if (prevFilter === "all") return "pendente";
@@ -46,11 +50,15 @@ const TaskList = ({ tasks, setTasks }) => {
         <h1 className="task-title">Tarefas atuais selecionadas</h1>
         <button onClick={toggleFilter} className="task-filter-button">
           <span className="task-filter-text">
-            {filter === "all"
-              ? "Todas"
-              : filter === "pendente"
-              ? "Pendentes"
-              : "Concluídas"}
+            {(() => {
+              if (filter === "all") {
+                return "Todas";
+              } else if (filter === "pendente") {
+                return "Pendentes";
+              } else {
+                return "Concluídas";
+              }
+            })()}
           </span>
         </button>
         <div className="task-line" />
